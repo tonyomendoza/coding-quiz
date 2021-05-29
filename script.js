@@ -38,5 +38,7 @@ function correctAnswer(){
     hide();
     increment();
     show();
-
+}
+function gameOver(){
+    playing = false 
 }
