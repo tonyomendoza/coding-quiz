@@ -10,7 +10,7 @@ function show(){
     document.getElementsByClassName("question")[counter].style.display = "flex";
 }
 function increment(){
-    if (counter < 4){
+    if (counter < 6){
         counter++
     }
 }
@@ -39,6 +39,16 @@ function correctAnswer(){
     increment();
     show();
 }
-function gameOver(){
-    playing = false 
+function submitScore(){
+    highScoreList.push({
+        name: document.getElementById('initials').value,
+     score: highScore,
+});
+console.log(highScoreList);
+let newScore = document.createElement("p");
+newScore.innerText = `${document.getElementById('initials').value}:${highScore}`;
+document.getElementById("highScores").append(newScore);
+hide();
+increment();
+show();
 }
