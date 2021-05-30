@@ -3,11 +3,16 @@ var counter = 0;
 var timer = 60;
 var highScore = 0;
 var highScoreList = []
+var scoreCard = document.getElementById("end");
+var highScores = document.getElementById("highScores");
+document.getElementById("submit").addEventListener("click", submitScore());
+
 function hide(){
     document.getElementsByClassName("question")[counter].style.display = "none";
 }
 function show(){
     document.getElementsByClassName("question")[counter].style.display = "flex";
+    highScores.style.display = "none";
 }
 function increment(){
     if (counter < 6){
@@ -27,6 +32,8 @@ function init(){
             clearInterval(quizTimer);
             document.getElementById("timer").innerHTML = "Out of time";
             alert("You are out of time");
+            hide()
+            scoreCard.style.display = "flex";
         }
     },1000);
 }
@@ -40,15 +47,22 @@ function correctAnswer(){
     show();
 }
 function submitScore(){
+    console.log ("button click");
     highScoreList.push({
         name: document.getElementById('initials').value,
-     score: highScore,
-});
-console.log(highScoreList);
+        score: highScore
+    });
+    console.log (highScore);
 let newScore = document.createElement("p");
-newScore.innerText = `${document.getElementById('initials').value}:${highScore}`;
-document.getElementById("highScores").append(newScore);
-hide();
-increment();
-show();
-}
+    newScore.innerText = `${document.getElementById('initials').value}:${highScore}`;
+    document.getElementById("highScores").append(newScore);
+    scoreCard.style.display = "none";
+    highScores.style.display = "flex";
+};
+//console.log(highScoreList);
+//let newScore = document.createElement("p");
+//newScore.innerText = `${document.getElementById('initials').value}:${highScore}`;
+//document.getElementById("highScores").append(newScore);
+//hide();
+//increment();
+//show();
