@@ -22,16 +22,23 @@ function init(){
     show();
     var quizTimer = setInterval(function(){
         document.getElementById("timer").innerHTML = timer;
+        document.getElementById("highScore").innerHTML = `Your final score is: ${highScore}`;
         timer--;
         if(timer <= 0){
             clearInterval(quizTimer);
             document.getElementById("timer").innerHTML = "Out of time";
             alert("You are out of time");
+            hide();
+            counter = 5;
+            document.getElementsByClassName("question")[counter].style.display = "flex";
         }
     },1000);
 }
 function wrongAnswer(){
     timer = timer - 15;
+    hide();
+    increment();
+    show();
 }
 function correctAnswer(){
     highScore = highScore + 15;
