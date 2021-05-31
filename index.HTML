@@ -25,7 +25,7 @@
         <h1>Include:</h1>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">Strings</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">Booleans</button>
-        <button type="button" class="btn indigo">Alerts</button>
+        <button type="button" class="btn indigo" onclick="correctAnswer()">Alerts</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">Numbers</button>
     </div>
     </div>
@@ -34,22 +34,30 @@
         <button type="button" class="btn indigo" onclick="wrongAnswer()">curly braces</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">square brackets</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">parenthesis</button>
-        <button type="button" class="btn indigo" onclick="wrongAnswer()">numbers</button>
-        <button type="button" class="btn indigo">quotations</button>
+        <button type="button" class="btn indigo" onclick="correctAnswer()">quotations</button>
     </div>
     <div id="third" class= "question"> 
         <h1>Variables are declared with the ____ key word</h1>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">function</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">for</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">if</button>
-        <button type="button" class="btn indigo">var</button>
+        <button type="button" class="btn indigo" onclick="correctAnswer()">var</button>
     </div>
     <div id="forth" class= "question"> 
         <h1>which one of these is NOT an arithmetic operator?</h1>
-        <button type="button" class="btn indigo">?</button>
+        <button type="button" class="btn indigo" onclick="correctAnswer()">?</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">**</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">%</button>
         <button type="button" class="btn indigo" onclick="wrongAnswer()">+</button>
+    </div>
+    <div id="end" class="question">
+        <h1>All Done</h1>
+        <p id="highScore">Your final score is: </p>
+        <input type="text"id="initials">
+        <button type="button" class="btn indigo" onclick="submitScore()">Submit</button>
+    </div>
+    <div id="highScores" class="question">
+      <h1>List of all high scores</h1>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
